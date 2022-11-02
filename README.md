@@ -35,7 +35,7 @@ v
 
 ## Brainf***?
 
-Brainf*** is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more; my favorite part is the [1-to-1 mapping to lines of C code](https://en.wikipedia.org/wiki/Brainfuck#Commands), meaning a direct transpilation of brainf*** to c can be completed in a handful of lines.
+Brainf*** is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more; my favorite part is the [1-to-1 mapping to lines of C code](https://en.wikipedia.org/wiki/Brainfuck#Commands), meaning a direct transpilation of Brainf*** to c can be completed in a handful of lines.
 
 ## Befunge?
 
@@ -53,7 +53,7 @@ It probably isn't! :D
 
 # Architecture
 
-There is not much to a brainf*** interpreter. You need:
+There is not much to a Brainf*** interpreter. You need:
 
 1. An array to hold onto your data
 2. An instruction pointer, to point to the current instruction
@@ -81,7 +81,7 @@ You don't need to know the entire instruction set of Befunge to make sense of th
 
 ## `>::44*5*1-/1+\44*5*1-%1+`
 
-Yeah... befunge is a bit of a write-only language.
+Yeah... Befunge is a bit of a write-only language.
 
 This code used to be much simpler: `:1+1g` -> copy the instruction pointer, add 1 to it, add a y value of `1` to the stack, and `get` the value at the square [x+1,1]. However, the funge-93 specification clearly outlines a maximum board size of 80x25 instructions, and most Befunge interpreters / compilers dutifully comply. "Hello World" in bf is well over 80 characters, so I needed to write some text wrapping code in order to have any usable amount of program space. There is a Funge-98 specification which allows for arbitrarily sized program spaces, but it also allows for 3-dimensional program spaces, so it's a bit overkill.
 
