@@ -55,9 +55,9 @@ It probably isn't! :D
 
 There is not much to a brainf*** interpreter. You need:
 
-1. an array to hold onto your data
-2. an instruction pointer, to point to the current instruction
-3. a data pointer, to point to the current data
+1. An array to hold onto your data
+2. An instruction pointer, to point to the current instruction
+3. A data pointer, to point to the current data
 
 We also avail ourselves of two counters: one each for the amount of left and right brackets we are abiding by at a given moment. No other state is needed; all other commands are executed immediately, using the topmost row of the grid as the data storage.
 
@@ -137,7 +137,7 @@ This and 6 of the lines after it will perform a specific bf instruction if the t
 
 `#` is the `jump` command and just jumps over the next code point. the aligned blocks are just sugar to show what bf instruction was just executed.
 
-if we instead went left it means we didn't match on the character. we subtract one to get to `44` (,) and move down the chain
+If we instead went left it means we didn't match on the character. we subtract one to get to `44` (,) and move down the chain
 
 ## `v:-1_$\:1+~84*+\0p\>`
 
@@ -145,7 +145,7 @@ Here we execute the `,` bf command, which inserts user data into the current dat
 
 ## `v:-1_$\:1+:0g1-\0p\>`
 
-the - command subtracts from the current data in the current data location. The code is identical to two sections above, save that we subtract one from the data value instead.
+The `-` command subtracts from the current data in the current data location. The code is identical to two sections above, save that we subtract one from the data value instead.
 
 ## `v:-*27_$\:1+0g84*-,\>`
 
@@ -175,8 +175,8 @@ Here's that extra code block. Regardless of our branch we swap the data and inst
 
 We actually deviate from the bf specification in one significant way: instead of ignoring comments, we terminate on any non-bf instruction. The reasons for this is twofold:
 
-1. we don't really have enough space for comments, but more to the point
-2. we can't tell when the program ends
+1. We don't really have enough space for comments, but more to the point
+2. We can't tell when the program ends
 
 There is no end-of-input character; we could add one, but that is effectively adding a new instruction to Brainf***, which feels a lot worse than just terminating on non-bf input.
 
