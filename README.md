@@ -5,6 +5,34 @@
  * Turing complete (with minimal changes) in Funge-98!
  * Tested and working [here](https://www.jdoodle.com/execute-befunge-online/), [here](https://www.tutorialspoint.com/compile_befunge_online.php), and [here](https://esolangpark.vercel.app/ide/befunge93)!
 
+```
+v
+0++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+
+0++.------.--------.>>+.>++.
+v
+v
+v
+v
+v
+>::44*5*1-%1+\44*5*1-/1+g02g68*-!v                                              
+^                  v     !-*86g10_99*9+1+-:v                                    
+^                 v_99*9+3+-:v                                                  
+^                             <-1p20+g20!-2_$02g1-:02p68*-!!2*-v                
+^              <+1 p10+g10!+2_$01g1-01p>                       v                
+^                 >           76*1+-:v                         v                
+^                                v:-1_$\:1+:0g1+\0p\>    #+    v                
+^                            v:-1_$\:1+~84*+\0p\>        #,    v                
+^                        v:-1_$\:1+:0g1-\0p\>            #-    v                
+^                  v:-*27_$\:1+0g84*-,\>                 #.    v                
+^              v:-2_$\1-\>                               #<    v                
+^      v:-+1*56_$\1+\>                                   #>    v                
+^  v:+2_$\:1+0g84*-!v                                          v                
+^                 v\_\02g1+02p2->                        #]    v                
+^ @_$\:1+0g84*-v  #                                            v                
+^            v\_\01g1+01p>                               #[    v                
+^+1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<                
+```
+
 ## Brainf***?
 
 Brainf*** is an esoteric programming language consisting of 8 instructions (> < + - . , [ and ]) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more; my favorite part is the [1-to-1 mapping to lines of C code](https://en.wikipedia.org/wiki/Brainfuck#Commands), meaning a direct transpilation of brainf*** to c can be completed in a handful of lines.
