@@ -43,7 +43,7 @@ Befunge is an esoteric programming language designed to be incredibly difficult 
 
 ### Is this actually turing complete then?
 
-No, but also sort of. With the limited code and data space, running in a funge-93 compliant compiler / interpreter, this code is not turing complete. It could be if the program was fed in via stdin, but I didn't want to interleave program and user input.
+Almost. With the limited code and data space, running in a funge-93 compliant compiler / interpreter, this code is not turing complete. It could be if the program was fed in via stdin, but I didn't want to interleave program and user input.
 
 It is, however, trivial to achieve turing completeness in a funge-98 compiler / interpreter while still using the Funge-93 instruction set. The text wrapping code should be removed, after which the Brainf*** program is written entirely on line 1. Funge-98 programs are not constrained to any size grid, so data and program space can stretch continuously, and turing completeness is achieved.
 
