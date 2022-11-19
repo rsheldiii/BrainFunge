@@ -65,7 +65,7 @@ We also avail ourselves of two counters: one each for the amount of left and rig
 
 Brainf*** accomplishes looping by using brackets: if a right bracket is encountered, and the data at the current data pointer is nonzero, the program loops back to the matching left bracket. Vice versa is also true, if a left bracket is found and the data at the data pointer _is_ zero, we jump forward to the matching right bracket. At first blush this can look tricky to implement but luckily, bracket matching is O(n). When moving forward you keep a tally of how many left vs right brackets you've seen; when that number reaches 0, you have reached the end of the original bracketed data. When moving backward, the tally becomes right vs left brackets.
 
-This bf interpreter uses two "static" counters to achieve this, that literally occupy a space on the board. These could be held in memory, but Befunge only supports swapping the topmost two values in the stack. By storing the bracket counters on the board itself we need only store the data and instruction pointer in memory, making swaps trivial. What's more, the bracket tallys reuse the original instruction and data pointer initialization instructions as a space-saving measure!
+This bf interpreter uses two "static" counters to achieve this, that physically occupy a space on the board. These could be held in memory, but Befunge only supports swapping the topmost two values in the stack. By storing the bracket counters on the board itself we need only store the data and instruction pointer in memory, making swaps trivial. What's more, the bracket tallys reuse the original instruction and data pointer initialization instructions as a space-saving measure!
 
 # Code Overview
 
