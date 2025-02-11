@@ -1,5 +1,5 @@
 # BrainFunge
- A Brainf*** interpreter written in Befunge!
+ A [Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter written in Befunge!
 
  * Funge-93 compliant!
  * Turing complete (with minimal changes) in Funge-98!
