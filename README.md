@@ -35,7 +35,7 @@ v
 
 ## Brainf***?
 
-Brainf*** is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more; my favorite part is the [1-to-1 mapping to lines of C code](https://en.wikipedia.org/wiki/Brainfuck#Commands), meaning a direct transpilation of Brainf*** to c can be completed in a handful of lines.
+Brainf*** is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more.
 
 ## Befunge?
 
