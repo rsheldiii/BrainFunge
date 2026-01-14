@@ -1,5 +1,5 @@
 # BrainFunge
- A [Brainf***](https://en.wikipedia.org/wiki/Brainfuck) interpreter written in Befunge!
+ A [BF](https://en.wikipedia.org/wiki/Brainfuck) interpreter written in Befunge!
 
  * Funge-93 compliant!
  * Turing complete (with minimal changes) in Funge-98!
@@ -33,9 +33,9 @@ v
 ^+1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<                
 ```
 
-## Brainf***?
+## BF?
 
-Brainf*** is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more.
+BF is an esoteric programming language consisting of 8 instructions (`>` `<` `+` `-` `.` `,` `[` and `]`) that is a fantastic introduction to writing interpreters / compilers or proving a system is Turing complete. The [Wikipedia](https://en.wikipedia.org/wiki/Brainfuck#Language_design) article is a great place to read more.
 
 ## Befunge?
 
@@ -45,7 +45,7 @@ Befunge is an esoteric programming language designed to be incredibly difficult 
 
 Almost. With the limited code and data space, running in a funge-93 compliant compiler / interpreter, this code is not turing complete. It could be if the program was fed in via stdin, but I didn't want to interleave program and user input.
 
-It is, however, trivial to achieve turing completeness in a funge-98 compiler / interpreter while still using the Funge-93 instruction set. The text wrapping code should be removed, after which the Brainf*** program is written entirely on line 1. Funge-98 programs are not constrained to any size grid, so data and program space can stretch continuously, and turing completeness is achieved.
+It is, however, trivial to achieve turing completeness in a funge-98 compiler / interpreter while still using the Funge-93 instruction set. The text wrapping code should be removed, after which the BF program is written entirely on line 1. Funge-98 programs are not constrained to any size grid, so data and program space can stretch continuously, and turing completeness is achieved.
 
 ### This doesn't look very space and/or time efficient
 
@@ -53,7 +53,7 @@ It probably isn't! :D
 
 # Architecture
 
-There is not much to a Brainf*** interpreter. You need:
+There is not much to a BF interpreter. You need:
 
 1. An array to hold onto your data
 2. An instruction pointer, to point to the current instruction
@@ -63,7 +63,7 @@ We also avail ourselves of two counters: one each for the amount of left and rig
 
 ## Brackets?
 
-Brainf*** accomplishes looping by using brackets: if a right bracket is encountered, and the data at the current data pointer is nonzero, the program loops back to the matching left bracket. Vice versa is also true, if a left bracket is found and the data at the data pointer _is_ zero, we jump forward to the matching right bracket. At first blush this can look tricky to implement but luckily, bracket matching is O(n). When moving forward you keep a tally of how many left vs right brackets you've seen; when that number reaches 0, you have reached the end of the original bracketed data. When moving backward, the tally becomes right vs left brackets.
+BF accomplishes looping by using brackets: if a right bracket is encountered, and the data at the current data pointer is nonzero, the program loops back to the matching left bracket. Vice versa is also true, if a left bracket is found and the data at the data pointer _is_ zero, we jump forward to the matching right bracket. At first blush this can look tricky to implement but luckily, bracket matching is O(n). When moving forward you keep a tally of how many left vs right brackets you've seen; when that number reaches 0, you have reached the end of the original bracketed data. When moving backward, the tally becomes right vs left brackets.
 
 This bf interpreter uses two "static" counters to achieve this, that physically occupy a space on the board. These could be held in memory, but Befunge only supports swapping the topmost two values in the stack. By storing the bracket counters on the board itself we need only store the data and instruction pointer in memory, making swaps trivial. What's more, the bracket tallys reuse the original instruction and data pointer initialization instructions as a space-saving measure!
 
@@ -178,7 +178,7 @@ We actually deviate from the bf specification in one significant way: instead of
 1. We don't really have enough space for comments, but more to the point
 2. We can't tell when the program ends
 
-There is no end-of-input character; we could add one, but that is effectively adding a new instruction to Brainf***, which feels a lot worse than just terminating on non-bf input.
+There is no end-of-input character; we could add one, but that is effectively adding a new instruction to BF, which feels a lot worse than just terminating on non-bf input.
 
 Anyways, if we don't match on the left bracket's ascii value we immediately terminate the program. If we do match, we grab the data at the data pointer and subtract our 32 offset...
 
