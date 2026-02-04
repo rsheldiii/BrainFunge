@@ -4,6 +4,7 @@
  * Funge-93 compliant!
  * Turing complete (with minimal changes) in Funge-98!
  * Tested and working [here](https://www.jdoodle.com/execute-befunge-online/), [here](https://www.tutorialspoint.com/compile_befunge_online.php), and [here](https://esolangpark.vercel.app/ide/befunge93)!
+ * Also works in my [own Python3 Befunge interpreter!](https://github.com/rsheldiii/Befunge.py)
 
 ```
 v
